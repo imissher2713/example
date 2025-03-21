@@ -1,0 +1,20 @@
+extends ../../layouts/default
+include ../../mixins/box-head
+
+block main 
+    +box-head("Danh sach san pham")
+    .container 
+        .row
+            each item in products 
+                .col-lg-3.col-md-4.col-6-sm.col-12-xs
+                    a(href="/products" style="color: black; display: block; border: 1px solid #333;").product-items 
+                        .inner-image 
+                            img(src="/img/led.png", alt="Dây đèn led")
+                        .inner-contents
+                            h3.inner-title #{item.title}
+                            .inner-price-new #{item.new_price}
+                            .inner-price-old #{item.old_price}
+                            .inner-discount #{item.discount}%
+           
+            
+            
